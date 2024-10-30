@@ -1,0 +1,118 @@
+<mujoco model="gello_active">
+    <compiler angle="radian" meshdir="assets/gello_active"/>
+    <size njmax="500" nconmax="100" />
+    <asset>
+        <mesh name="base_link" file="base_link.STL" />
+        <mesh name="xl430_1" file="xl430_1.STL" />
+        <mesh name="L1" file="L1.STL" />
+        <mesh name="xl430_2" file="xl430_2.STL" />
+        <mesh name="L2" file="L2.STL" />
+        <mesh name="xl430_3" file="xl430_3.STL" />
+        <mesh name="L3" file="L3.STL" />
+        <mesh name="xl330_1" file="xl330_1.STL" />
+        <mesh name="L4" file="L4.STL" />
+        <mesh name="xl330_2" file="xl330_2.STL" />
+        <mesh name="L5" file="L5.STL" />
+        <mesh name="xl330_3" file="xl330_3.STL" />
+        <mesh name="end_effector" file="end_effector.STL" />
+    </asset>
+
+
+    <default>
+        <default class="gello_active">
+            <general biastype="affine"/>
+            <joint axis="0 1 0"/>
+            <default class="shoulder_pan_joint">
+                <joint pos="0 0 0" axis="0 1 0" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+            <default class="shoulder_lift_joint">
+                <joint pos="0 0 0" axis="0 0 1" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+            <default class="elbow_joint">
+                <joint pos="0 0 0" axis="1 0 0" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+            <default class="wrist1_joint">
+                <joint pos="0 0 0" axis="0 0 1" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+            <default class="wrist2_joint">
+                <joint pos="0 0 0" axis="0 1 0" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+            <default class="end_effector_joint">
+                <joint pos="0 0 0" axis="0 1 0" range="-3.14158 3.14158" damping="0.1"/>
+                <position ctrlrange="-3.14158 3.14158" kp="25"/>
+            </default>
+        </default>
+    </default>
+ 
+
+
+
+
+    <worldbody>
+    <body name="robot" pos="0 0 0.017">
+        <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="base_link" />
+        <geom pos="0.031148 0.02289 -0.18013" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="xl430_1" />
+        <body name="L1" pos="0.031148 0.01189 0.02751" quat="0.502989 0.502991 0.496993 0.496991">
+            <inertial pos="0.0131095 0.0200186 3.85053e-08" quat="-0.0986588 0.700193 0.0986542 0.700189" mass="0.0422302" diaginertia="1.64424e-05 1.44945e-05 6.77482e-06" />
+            <!-- <joint name="shoulder_pan_joint" pos="0 0 0" axis="0 1 0" /> -->
+            <joint name="shoulder_pan_joint" class="shoulder_pan_joint"/>
+            <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="L1" />
+            <body name="xl430_2" pos="0.03915 0.021935 0" quat="0.00116283 0.707106 -0.00116802 -0.707106">
+                <inertial pos="-7.49656e-05 -0.0631752 -0.0234315" quat="0.500588 0.499795 -0.500205 0.499411" mass="0.139266" diaginertia="0.000357155 0.000354897 3.15121e-05" />
+                <!-- <joint name="shoulder_lift_joint" pos="0 0 0" axis="0 0 1" /> -->
+                <joint name="shoulder_lift_joint" class="shoulder_lift_joint"/>
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="xl430_2" />
+                <geom pos="0 -0.0178 -0.04565" quat="-0.499604 0.500398 0.499602 0.500396" type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="L2" />
+                <geom pos="-0.000190568 -0.13735 -0.21035" quat="0.00079449 -1.45917e-09 -1.83661e-06 1" type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="xl430_3" />
+                <body name="L3" pos="-0.00017309 -0.126351 -0.00399996" quat="0.707108 -0.000318201 0.707105 0.000320793">
+                    <inertial pos="-0.0311885 6.3421e-07 0.0515904" quat="0.70531 -0.0493785 -0.0493588 0.705452" mass="0.0644622" diaginertia="0.000119343 0.000116078 1.38586e-05" />
+                    <!-- <joint name="elbow_joint" pos="0 0 0" axis="1 0 0" /> -->
+                    <joint name="elbow_joint" class="elbow_joint"/>
+                    <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="L3" />
+                    <geom pos="-0.4171 0.075425 0.13419" quat="0.499998 -0.5 0.500002 -0.5" type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="xl330_1" />
+                    <body name="L4" pos="-0.0210704 -1.4547e-06 0.106597" quat="0.493633 -0.506285 0.493637 -0.506285">
+                        <inertial pos="-0.000475342 0.00136855 0.0205829" quat="0.99748 -0.0709501 2.68599e-05 0.000273644" mass="0.029294" diaginertia="7.17615e-06 6.48434e-06 3.71188e-06" />
+                        <!-- <joint name="wrist1_joint" pos="0 0 0" axis="0 0 1" /> -->
+                        <joint name="wrist1_joint" class="wrist1_joint"/>
+                        <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="L4" />
+                        <geom pos="0.07495 0.38155 0.061433" quat="-2.59734e-06 2.59735e-06 0.707108 -0.707105" type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="xl330_2" />
+                        <body name="L5" pos="-0.000477906 -0.0139893 0.0338395" quat="0.00077795 3.6732e-06 1 3.67035e-06">
+                            <inertial pos="-0.00143676 -0.020819 1.34472e-06" quat="0.536112 0.460617 -0.536544 0.461017" mass="0.0295406" diaginertia="6.81484e-06 6.32502e-06 3.76696e-06" />
+                            <!-- <joint name="wrist2_joint" pos="0 0 0" axis="0 1 0" /> -->
+                            <joint name="wrist2_joint" class="wrist2_joint"/>
+                            <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="L5" />
+                            <geom pos="-0.38197 -0.06135 0.075425" quat="0.707105 0 0.707108 0" type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="xl330_3" />
+                            <body name="end_effector" pos="0.0144797 -0.033758 -1.45624e-06" quat="0.500896 0.499101 0.499101 -0.500899">
+                                <inertial pos="-0.000754674 0.0314156 0.0190544" quat="0.929361 -0.368647 0.0184496 0.00689113" mass="0.0630826" diaginertia="5.12961e-05 4.16507e-05 1.99882e-05" />
+                                <!-- <joint name="end_effector_joint" pos="0 0 0" axis="0 1 0" /> -->
+                                <joint name="end_effector_joint" class="end_effector_joint"/>
+                                <geom type="mesh" rgba="0.627451 0.627451 0.627451 1" mesh="end_effector" />
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </body>
+    </worldbody>
+
+
+
+
+    <actuator>
+        <position class="shoulder_pan_joint" name="shoulder_pan_joint" joint="shoulder_pan_joint"/>
+        <position class="shoulder_lift_joint" name="shoulder_lift_joint" joint="shoulder_lift_joint"/>
+        <position class="elbow_joint" name="elbow_joint" joint="elbow_joint"/>
+        <position class="wrist1_joint" name="wrist1_joint" joint="wrist1_joint"/>
+        <position class="wrist2_joint" name="wrist2_joint" joint="wrist2_joint"/>
+        <position class="end_effector_joint" name="end_effector_joint" joint="end_effector_joint"/>
+    </actuator>
+
+
+
+</mujoco>

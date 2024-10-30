@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gello_active">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00607992357022163 0.00301681012562898 -0.0120084237052049"
+        rpy="0 0 0" />
+      <mass
+        value="0.141701823329413" />
+      <inertia
+        ixx="9.16590245869373E-05"
+        ixy="4.41747452799809E-07"
+        ixz="-1.46076004773529E-06"
+        iyy="0.000464772999996468"
+        iyz="4.39975233128003E-07"
+        izz="0.000553493733719803" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="xl430_1">
+    <inertial>
+      <origin
+        xyz="1.5967816055059E-05 -0.0231678735095451 0.189804632480122"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422899908141637" />
+      <inertia
+        ixx="1.14363623470572E-05"
+        ixy="2.19257344028899E-08"
+        ixz="1.93744470134444E-08"
+        iyy="6.66551225129734E-06"
+        iyz="-3.26219221789726E-07"
+        izz="1.03632749606566E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_fix_joint"
+    type="fixed">
+    <origin
+      xyz="0.031148 0.02289 -0.18013"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="xl430_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L1">
+    <inertial>
+      <origin
+        xyz="0.0131095359774512 0.0200185962795386 3.85052656877438E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422302330046642" />
+      <inertia
+        ixx="7.36420707897911E-06"
+        ixy="-2.04999859782137E-06"
+        ixz="4.80873013798741E-11"
+        iyy="1.39050823217511E-05"
+        iyz="-9.88240135826397E-13"
+        izz="1.64424364389766E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pan_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.011 0.20764"
+      rpy="1.5708 0 1.5588" />
+    <parent
+      link="xl430_1" />
+    <child
+      link="L1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="xl430_2">
+    <inertial>
+      <origin
+        xyz="1.59678160428812E-05 -0.0121678735095403 -0.0205450583333916"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422899908141372" />
+      <inertia
+        ixx="1.14363623457656E-05"
+        ixy="2.19257342941186E-08"
+        ixz="1.93744470209128E-08"
+        iyy="6.6655122500993E-06"
+        iyz="-3.26219221776539E-07"
+        izz="1.03632749584015E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_lift_joint"
+    type="continuous">
+    <origin
+      xyz="0.03915 0.021935 0"
+      rpy="1.5708 1.5675 -1.5708" />
+    <parent
+      link="L1" />
+    <child
+      link="xl430_2" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="L2">
+    <inertial>
+      <origin
+        xyz="0.0177542994227649 2.65439271743273E-08 -0.0453750285135328"
+        rpy="0 0 0" />
+      <mass
+        value="0.0546858829355452" />
+      <inertia
+        ixx="0.000116370950741875"
+        ixy="1.81389221602465E-11"
+        ixz="-2.92213419206246E-11"
+        iyy="0.000110173032075185"
+        iyz="6.97646032473169E-11"
+        izz="1.63865438538971E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L2_fix_joint_1"
+    type="fixed">
+    <origin
+      xyz="0 -0.0178 -0.04565"
+      rpy="1.5708 -1.5708 3.14" />
+    <parent
+      link="xl430_2" />
+    <child
+      link="L2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="xl430_3">
+    <inertial>
+      <origin
+        xyz="1.59678160644369E-05 -0.0231678735095394 0.189804632480152"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422899908141366" />
+      <inertia
+        ixx="1.14363623457538E-05"
+        ixy="2.19257343254807E-08"
+        ixz="1.93744470444507E-08"
+        iyy="6.66551225006578E-06"
+        iyz="-3.26219221780501E-07"
+        izz="1.03632749583609E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl430_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L2_fix_joint_2"
+    type="fixed">
+    <origin
+      xyz="-0.1647 0 -0.11955"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="L2" />
+    <child
+      link="xl430_3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L3">
+    <inertial>
+      <origin
+        xyz="-0.0301727625382926 7.29364901808083E-09 0.0367965289329686"
+        rpy="0 0 0" />
+      <mass
+        value="0.0492342604004969" />
+      <inertia
+        ixx="6.65552530347298E-05"
+        ixy="-2.34601443151155E-10"
+        ixz="1.10060129110157E-05"
+        iyy="7.13375971649568E-05"
+        iyz="-8.67163895975908E-11"
+        izz="1.44416116216454E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.011 0.20635"
+      rpy="3.1391 1.5708 0" />
+    <parent
+      link="xl430_3" />
+    <child
+      link="L3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="xl330_1">
+    <inertial>
+      <origin
+        xyz="0.075420933410812 0.0347673256207063 0.382628050770604"
+        rpy="0 0 0" />
+      <mass
+        value="0.0152279846230564" />
+      <inertia
+        ixx="2.17665876063418E-06"
+        ixy="4.53367975855433E-10"
+        ixz="3.44547193193838E-10"
+        iyy="1.18539413924355E-06"
+        iyz="3.78846786423317E-08"
+        izz="1.9254867966804E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L3_fix_joint"
+    type="fixed">
+    <origin
+      xyz="-0.4171 0.075425 0.13419"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="L3" />
+    <child
+      link="xl330_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L4">
+    <inertial>
+      <origin
+        xyz="-0.000477072229915942 0.00401650330059737 0.0139990913771146"
+        rpy="0 0 0" />
+      <mass
+        value="0.0140660643273876" />
+      <inertia
+        ixx="3.63687535667914E-06"
+        ixy="-9.74097096280489E-11"
+        ixz="-2.49888518797472E-10"
+        iyy="3.33041431373118E-06"
+        iyz="-8.98088497865558E-07"
+        izz="2.39230639555156E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist1_joint"
+    type="continuous">
+    <origin
+      xyz="0.075425 0.027592 0.39603"
+      rpy="0 0 -0.0253" />
+    <parent
+      link="xl330_1" />
+    <child
+      link="L4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="xl330_2">
+    <inertial>
+      <origin
+        xyz="0.0754209334106387 0.0347673256204681 0.38262805076857"
+        rpy="0 0 0" />
+      <mass
+        value="0.0152279846189667" />
+      <inertia
+        ixx="2.17665876004823E-06"
+        ixy="4.53367993856033E-10"
+        ixz="3.44547213162623E-10"
+        iyy="1.18539413891491E-06"
+        iyz="3.7884678633927E-08"
+        izz="1.92548679613301E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L4_fix_joint"
+    type="fixed">
+    <origin
+      xyz="0.07495 0.38155 0.061433"
+      rpy="-1.5708 0 -3.1416" />
+    <parent
+      link="L4" />
+    <child
+      link="xl330_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="L5">
+    <inertial>
+      <origin
+        xyz="-0.00366525305716781 -0.0146866156468189 -5.58749708168271E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0143126365472127" />
+      <inertia
+        ixx="3.29740959153761E-06"
+        ixy="-7.98147494033704E-07"
+        ixz="-1.40516069342754E-11"
+        iyy="2.50168725783588E-06"
+        iyz="-9.74587155325639E-12"
+        izz="3.45618139699858E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/L5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist2_joint"
+    type="continuous">
+    <origin
+      xyz="0.075425 0.027592 0.39554"
+      rpy="-1.5708 0 0.0015559" />
+    <parent
+      link="xl330_2" />
+    <child
+      link="L5" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="xl330_3">
+    <inertial>
+      <origin
+        xyz="0.0754209334109733 0.034767325620958 0.382628050772475"
+        rpy="0 0 0" />
+      <mass
+        value="0.0152279846267835" />
+      <inertia
+        ixx="2.17665876117142E-06"
+        ixy="4.53367959448234E-10"
+        ixz="3.4454717404982E-10"
+        iyy="1.18539413954641E-06"
+        iyz="3.78846786476651E-08"
+        izz="1.92548679717928E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/xl330_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L5_fix_joint"
+    type="fixed">
+    <origin
+      xyz="-0.38197 -0.06135 0.075425"
+      rpy="0 1.5708 0" />
+    <parent
+      link="L5" />
+    <child
+      link="xl330_3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="-0.000754673739559147 0.0314156499838131 0.019054370079741"
+        rpy="0 0 0" />
+      <mass
+        value="0.0630826138989227" />
+      <inertia
+        ixx="5.12626208541799E-05"
+        ixy="-4.41415959130818E-07"
+        ixz="-8.39849396262855E-07"
+        iyy="3.14722675313067E-05"
+        iyz="-1.08025214958209E-05"
+        izz="3.0200102348622E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/end_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.627450980392157 0.627450980392157 0.627450980392157 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gello_active/meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_joint"
+    type="continuous">
+    <origin
+      xyz="0.075425 0.027592 0.39645"
+      rpy="1.5708 0 -0.0035937" />
+    <parent
+      link="xl330_3" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
